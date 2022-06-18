@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>SkinUni</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- loader -->
+    <div id="loader">
+        <img src="assets/img/loading-icon.png" alt="icon" class="loading-icon">
+    </div>
+    <!-- * loader -->
+
+    <!-- App Header -->
+    <div class="appHeader bg-primary text-light">
+        <div class="left">
+            <a href="#" class="headerButton" data-bs-toggle="modal" data-bs-target="#sidebarPanel">
+                <ion-icon name="menu-outline"></ion-icon>
+            </a>
+        </div>
+        <div class="pageTitle">
+            <img src="assets/img/LogoSkinUni.png" alt="logo" class="logo">
+        </div>
+        <div class="right">
+            <a href="#" class="headerButton">
+                <img src="assets/img/sample/avatar/avatar1.jpg" alt="image" class="imaged w32">
+            </a>
+        </div>
+    </div>
+    <!-- * App Header -->
+
+
+    <!-- App Capsule -->
+    <div id="appCapsule">
+        <div class="get-image mx-3 pb-1">
+            <form enctype="multipart/form-data">
+                <div class="custom-file-upload capture" id="fileUpload1">
+                    <input type="file" id="fileuploadInput" accept=".png, .jpg, .jpeg">
+                    <label for="fileuploadInput">
+                        <span>
+                            <strong>
+                                <ion-icon name="arrow-up-circle-outline" role="img" class="md hydrated"
+                                    aria-label="arrow up circle outline"></ion-icon>
+                                <i>Upload a Photo</i>
+                            </strong>
+                        </span>
+                    </label>
+                </div>
+            </form>
+        </div>
+        <!-- <button id="testAPIimg" class="btn btn-primary me-1">Up IMG</button>
+        <button id="testAPI" class="btn btn-primary me-1">Test API</button> -->
+
+        <div class="container text-center">
+            <a href="#" id="testAPIimg" class="btn btn-primary next-btn" data-bs-toggle="modal"
+                data-bs-target="#ModalBasic">Next</a>
+        </div>
+
+    </div>
+    </div>
+    <!-- * App Capsule -->
+
+    <div class="modal fade modalbox" id="ModalBasic" tabindex="-1" style="display: none;" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Additional information</h5>
+                    <a href="#" data-bs-dismiss="modal">Back</a>
+                </div>
+                <div class="modal-body">
+                    <form id="more-info" action="detail.html">
+                        <div class="form-group boxed">
+                            <div class="input-wrapper">
+                                <label class="label" for="age">Age</label>
+                                <input type="number" class="form-control" id="age" placeholder="Your age">
+                                <i class="clear-input">
+                                    <ion-icon name="close-circle" role="img" class="md hydrated"
+                                        aria-label="close circle"></ion-icon>
+                                </i>
+                            </div>
+                        </div>
+
+                        <div class="form-group boxed">
+                            <div class="input-wrapper">
+                                <label class="label" for="gender">Gender</label>
+                                <select class="form-control custom-select" id="gender">
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group boxed">
+                            <div class="input-wrapper">
+                                <label class="label" for="localization">Localization</label>
+                                <select class="form-control custom-select" id="localization">
+                                    <option value="back">back</option>
+                                    <option value="lower_extremity">lower extremity</option>
+                                    <option value="trunk">trunk</option>
+                                    <option value="upper_extremity">upper extremity</option>
+                                    <option value="abdomen">abdomen</option>
+                                    <option value="face">face</option>
+                                    <option value="chest">chest</option>
+                                    <option value="foot">foot</option>
+                                    <option value="unknown">unknown</option>
+                                    <option value="neck">neck</option>
+                                    <option value="scalp">scalp</option>
+                                    <option value="hand">hand</option>
+                                    <option value="ear">ear</option>
+                                    <option value="genital">genital</option>
+                                    <option value="acral">acral</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button id="testAPI" class="btn btn-primary btn-block mt-2">Predict</button>
+
+                        <button id="see-result" type="submit" class="btn btn-primary btn-block mt-2 d-none">See result</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- App Bottom Menu -->
+    <div class="appBottomMenu">
+        <a href="#" class="item">
+            <div class="col">
+                <ion-icon name="chatbubbles-outline"></ion-icon>
+                <strong>Chat</strong>
+            </div>
+        </a>
+        <a href="main.html" class="item active">
+            <div class="col col-center">
+                <ion-icon name=""></ion-icon>
+                <strong>Scan</strong>
+            </div>
+        </a>
+        <a href="#" class="item">
+            <div class="col">
+                <ion-icon name="notifications-outline"></ion-icon>
+                <strong>Notifications</strong>
+            </div>
+        </a>
+    </div>
+    <!-- * App Bottom Menu -->
+
+    <!-- ========= JS Files =========  -->
+    <!-- Bootstrap -->
+    <script src="assets/js/lib/bootstrap.bundle.min.js"></script>
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-- Base + jquery Js File -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="assets/js/base.js"></script>
+
+    <script>
+        // Add to Home with 2 seconds delay.
+        AddtoHome("2000", "once");
+
+        const UrlAPI = "https://42fa-2001-ee0-4001-b87f-48f8-9d43-965d-3ef9.ngrok.io/";
+
+        let genPathFile = "img_" + Date.now().toString();
+        var dataMoreInfo = {
+            "path": genPathFile,
+            "sex": "",
+            "age": -1,
+            "local": ""
+        }
+
+        $('#testAPIimg').on('click', function () {
+            var form = new FormData();
+            form.append("files", $('#fileuploadInput')[0].files[0]);
+
+            var settings = {
+                "url": UrlAPI + "upload/" + genPathFile,
+                "method": "POST",
+                "timeout": 0,
+                "processData": false,
+                "mimeType": "multipart/form-data",
+                "contentType": false,
+                "data": form
+            };
+
+            $.ajax(settings).done(function (response) {
+                console.log(response);
+            });
+
+        });
+
+
+        var updateDataForm = function () {
+            dataMoreInfo["age"] = $('#more-info input#age').val();
+            dataMoreInfo["sex"] = $('#more-info select#gender').val();
+            dataMoreInfo["local"] = $('#more-info select#localization').val();
+
+            console.log(dataMoreInfo);
+        };
+        updateDataForm();
+        $('#more-info').change(updateDataForm);
+
+        function delay(delayInms) {
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    resolve(2);
+                }, delayInms);
+            });
+        }
+
+        $("#testAPI").click(async function (event) {
+            var url = UrlAPI + "diagnosis";
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", url);
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    console.log(xhr.status);
+                    console.log(xhr.responseText);
+                    sessionStorage.setItem('result', xhr.responseText);
+                    sessionStorage.setItem('img', genPathFile);
+                }
+            };
+            updateDataForm();
+            strDataMoreInfo = JSON.stringify(dataMoreInfo, (key, value) => (isNaN(value) ? value : +value))
+            console.log(strDataMoreInfo);
+            xhr.send(strDataMoreInfo);
+            event.preventDefault();
+            let delayres = await delay(2500);
+            $("#testAPI").addClass( "d-none" );
+            $("#see-result").removeClass( "d-none" ).addClass( "d-line-block" );
+        });
+
+    </script>
+
+</body>
+
+</html>

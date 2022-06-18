@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>SkinUni</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- loader -->
+    <div id="loader">
+        <img src="assets/img/loading-icon.png" alt="icon" class="loading-icon">
+    </div>
+    <!-- * loader -->
+
+    <!-- App Header -->
+    <div class="appHeader bg-secondary text-light">
+        <div class="left">
+            <a href="#" class="headerButton headerButton-bg goBack">
+                <ion-icon name="chevron-back-outline"></ion-icon>
+            </a>
+        </div>
+        <div class="pageTitle">
+            Result
+        </div>
+        <div class="right">
+            <a href="main.html" class="headerButton headerButton-bg">
+                <ion-icon name="home-outline"></ion-icon>
+            </a>
+        </div>
+    </div>
+    <!-- * App Header -->
+
+    <!-- App Capsule -->
+    <div id="appCapsule">
+        <div class="section full gradientSection">
+            <div class="py-3">
+                <img class="image-detect" src="assets/img/sample/photo/1.jpg" alt="">
+            </div>
+        </div>
+
+        <div class="container-fuild detail-result card">
+            <div class="top-bar"></div>
+
+            <div class="result-header d-flex justify-content-between d-flex align-items-center py-2">
+                <div class="lst-left">
+                    <span class="badge badge-secondary"><strong>Causes</strong></span>
+                    <span class="badge badge-secondary"><strong>Solutions</strong></span>
+                </div>
+
+                <div class="lst-right d-flex align-items-center">
+                    <a href="#" class="item chat-item me-1">
+                        <ion-icon name="chatbubbles"></ion-icon>
+                    </a>
+                    <a href="#" class="item save-item">
+                        <ion-icon name="heart-circle-outline"></ion-icon>
+                    </a>
+                </div>
+            </div>
+
+            <h2>Predicted results</h2>
+            <div id="lstPredicted">
+
+            </div>
+        </div>
+
+        <div class="next-step d-flex justify-content-center pt-2">
+            <a href="recommend.html" class="item btn-next-step">
+                <div class="col">
+                    <ion-icon name="arrow-forward-circle-outline"></ion-icon>
+                </div>
+            </a>
+        </div>
+    </div>
+    <!-- * App Capsule -->
+
+
+    <!-- ========= JS Files =========  -->
+    <!-- Bootstrap -->
+    <script src="assets/js/lib/bootstrap.bundle.min.js"></script>
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-- Base Js File -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="assets/js/base.js"></script>
+
+    <script>
+        const LS_arr = JSON.parse(sessionStorage.getItem('result'));
+        console.log(LS_arr);
+        $(".image-detect").attr("src","https://42fa-2001-ee0-4001-b87f-48f8-9d43-965d-3ef9.ngrok.io/download/" + sessionStorage.getItem('img'));
+
+        let reversedKeys = Object.keys(LS_arr).reverse();
+
+        reversedKeys.forEach(key => {
+            const ELM = $('\
+                <div class="item pt-1"> \
+                    <div class="in"> \
+                        <h4>' + key + '</h4> \
+                    </div> \
+                    <div class="progress"> \
+                        <div class="progress-bar" role="progressbar" style="width: '+ LS_arr[key] + '%;" aria-valuenow="' + LS_arr[key] + '" aria-valuemin="0" aria-valuemax="100">'+ LS_arr[key] +'%</div> \
+                    </div> \
+                </div> \
+            ');
+
+            $('#lstPredicted').append(ELM);
+            // document.querySelector("#myUL").append(ELM);
+            console.log(key, LS_arr[key]);
+        });
+    </script>
+
+</body>
+
+</html>
